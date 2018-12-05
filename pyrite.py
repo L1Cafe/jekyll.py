@@ -1,32 +1,30 @@
-import sys
 import os
 import datetime
 
-title = input("Enter the post title: ")
-filename_title = input("Enter the filename, separate words by '-' : ")
+TITLE = input("Enter the post title: ")
+FILENAME_TITLE = input("Enter the filename, separate words by '-' : ")
 # TODO: Show categories and tags
-tags = input("Enter the post tags, separated by spaces or nothing for no tags: ")
-category = input("Enter the post category, or nothing for no categories: ")
+TAGS = input("Enter the post tags, separated by spaces or nothing for no tags: ")
+CATEGORY = input("Enter the post category, or nothing for no categories: ")
 
-title_arr = title.split(' ')
+TITLE_ARR = TITLE.split(' ')
 
-filename = str(datetime.date.today()) + '-' + filename_title
+FILENAME = str(datetime.date.today()) + '-' + FILENAME_TITLE
 
-os.makedirs(os.path.join('assets', 'images', filename)) # TODO: PROPER ERROR HANDLING
+os.makedirs(os.path.join('assets', 'images', FILENAME)) # TODO: PROPER ERROR HANDLING
 #os.makedirs(os.path.join('_posts')) # TODO: PROPER ERROR HANDLING
 
-with open(os.path.join('_posts', filename + '.markdown'), 'w') as f:
-    f.write('---\ntitle:    "' + title + '"\ndate:     ')
+with open(os.path.join('_posts', FILENAME + '.markdown'), 'w') as f:
+    f.write('---\ntitle:    "' + TITLE + '"\ndate:     ')
     f.write(str(datetime.date.today()))
-    if tags:
-        f.write('\ntags:     ' + tags + '\n')
-    if category:
-        f.write('category:\t' + category + '\n')
+    if TAGS:
+        f.write('\ntags:     ' + TAGS + '\n')
+    if CATEGORY:
+        f.write('category:\t' + CATEGORY + '\n')
     f.write('comment:  header sizes are 2000x750\nheader:\n  image:    ')
-    f.write(str(os.path.join('assets', 'images', filename, 'header.jpg')))
+    f.write(str(os.path.join('assets', 'images', FILENAME, 'header.jpg')))
     f.write('\n  teaser:   ')
-    f.write(str(os.path.join('assets', 'images', filename, 'header.jpg')))
+    f.write(str(os.path.join('assets', 'images', FILENAME, 'header.jpg')))
     f.write('\n  caption:  ')
     f.write('"Photo credit: [**Unsplash**](https://unsplash.com)"\n---\n\n')
     f.write('Start writing here.\n')
-
