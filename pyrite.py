@@ -16,17 +16,17 @@ os.makedirs(os.path.join('assets', 'images', filename)) # TODO: PROPER ERROR HAN
 #os.makedirs(os.path.join('_posts')) # TODO: PROPER ERROR HANDLING
 
 with open(os.path.join('_posts', filename + '.markdown'), 'w') as f:
-	f.write('---\ntitle:    "' + title + '"\ndate:     ')
-	f.write(str(datetime.date.today()))
-	if tags:
-		f.write('\ntags:     ' + tags + '\n')
-	if category:
-		f.write('category:\t' + category + '\n')
-	f.write('comment:  header sizes are 2000x750\nheader:\n  image:    ')
-	f.write(str(os.path.join('assets', 'images', filename, 'header.jpg')))
-	f.write('\n  teaser:   ')
-	f.write(str(os.path.join('assets', 'images', filename, 'header.jpg')))
-	f.write('\n  caption:  ')
-	f.write('"Photo credit: [**Unsplash**](https://unsplash.com)"\n---\n\n')
-	f.write('Start writing here.\n')
+    f.write('---\ntitle:    "' + title + '"\ndate:     ')
+    f.write(str(datetime.date.today()))
+    if tags:
+        f.write('\ntags:     ' + tags + '\n')
+    if category:
+        f.write('category:\t' + category + '\n')
+    f.write('comment:  header sizes are 2000x750\nheader:\n  image:    ')
+    f.write(str(os.path.join('assets', 'images', filename, 'header.jpg')))
+    f.write('\n  teaser:   ')
+    f.write(str(os.path.join('assets', 'images', filename, 'header.jpg')))
+    f.write('\n  caption:  ')
+    f.write('"Photo credit: [**Unsplash**](https://unsplash.com)"\n---\n\n')
+    f.write('Start writing here.\n')
 
