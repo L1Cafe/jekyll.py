@@ -10,8 +10,6 @@ FILENAME_TITLE = input("Enter the post filename: ")
 TAGS = input("Enter the post tags, separated by spaces or nothing for no tags: ")
 CATEGORY = input("Enter the post category, or nothing for no categories: ")
 
-TITLE_ARR = TITLE.split(' ')
-
 FILENAME = str(datetime.date.today()) + '-' + FILENAME_TITLE + ".md"
 
 os.makedirs(os.path.join('assets', 'images', FILENAME)) # TODO: PROPER ERROR HANDLING
