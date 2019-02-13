@@ -5,7 +5,7 @@ import datetime
 import string
 
 TITLE = input("Enter the post title: ").strip
-FILENAME_TITLE = string.replace(TITLE, " ", "_")[:30]
+FILENAME_TITLE = input("Enter the post title: ").strip + ".md"
 # TODO: Show categories and tags
 TAGS = input("Enter the post tags, separated by spaces or nothing for no tags: ")
 CATEGORY = input("Enter the post category, or nothing for no categories: ")
